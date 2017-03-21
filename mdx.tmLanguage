@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>mdx</string>
+	</array>
+	<key>name</key>
+	<string>MultiDimensional Expressions (MDX)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Escaped characters</string>
+			<key>match</key>
+			<string>\\.</string>
+			<key>name</key>
+			<string>constant.character.escape.mdx</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>--.*$|//.*$|/\*.*\*/</string>
+			<key>name</key>
+			<string>comment.mdx</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?:-?\d+(?:\.\d+)?)(?:E-?\d+)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.mdx</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.mdx</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Parameter.</string>
+			<key>match</key>
+			<string>\$\{(.*?)\}</string>
+			<key>name</key>
+			<string>keyword.mdx</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\b(?:member|with|if|select|(?:non|is) empty|on columns|on rows|as|from|where|not|asc|desc|basc|bdesc)\b</string>
+			<key>name</key>
+			<string>keyword.mdx</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i)\.\b(Parent|Children|Ancestor|Descendants|CurrentMember|Name|Members|PrevMember|NextMember)\b</string>
+			<key>name</key>
+			<string>support.function.mdx</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b\w*?(?=\()</string>
+			<key>name</key>
+			<string>entity.name.function.mdx</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>".*?"</string>
+			<key>name</key>
+			<string>string.mdx</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.mdx</string>
+	<key>uuid</key>
+	<string>0184a7af-c3fc-4d64-b374-5668395ded2d</string>
+</dict>
+</plist>
